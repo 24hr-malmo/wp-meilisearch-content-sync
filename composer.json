@@ -1,0 +1,16 @@
+{
+    "name": "24hr/meilisearch",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "Meilisearch24hr\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Richard Sweeney",
+            "email": "richard.sweeney@24hr.se"
+        }
+    ],
+    "require": {}
+}
