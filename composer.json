@@ -16,6 +16,6 @@
     "squizlabs/php_codesniffer": "^3.6"
   },
   "scripts": {
-    "codestyle": "vendor/bin/phpcs --colors --standard=PSR12 ./src"
+    "codesniffer": "vendor/bin/phpcs --colors --standard=PSR12 ./src"
   }
 }
