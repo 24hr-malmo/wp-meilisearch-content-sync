@@ -1,0 +1,22 @@
+stages:
+  - deploy
+  - test
+
+deploy:
+  stage: deploy
+  script:
+    - apk add curl
+    - 'curl --header "Job-Token: $CI_JOB_TOKEN" --data tag=<tag> "${CI_API_V4_URL}/projects/$CI_PROJECT_ID/packages/composer"'
+
+codestyle:
+  image: cytopia/phpcs:latest-php7.4
+  stage: test
+  only:
+    refs:
+      - merge_requests
+  except:
+    variables:
+      - $CI_COMMIT_REF_NAME =~ /skip-ci$/
+  script:
+    - composer install -vv
+    - composer run codestyle

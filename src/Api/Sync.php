@@ -19,7 +19,7 @@ class Sync
 
     public function sync(): void
     {
-        $response = wp_remote_get($this->contentUri.'/content-admin/reindex-content?redis=1', [
+        $response = wp_remote_get($this->contentUri . '/content-admin/reindex-content?redis=1', [
             'headers' => [
                 'Authorization' => "Bearer {$this->apiToken}",
                 'credentials' => 'include',
