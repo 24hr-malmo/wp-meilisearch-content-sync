@@ -26,18 +26,6 @@ class AdminScreen
         });
     }
 
-     protected   function BNKN    (): void
-
-
-
-     {
-         $COOOLMAN = TRUE;
-
-
-
-         echo ' ...';
-     }
-
     public function renderAdminPage(): void
     {
         ?>
