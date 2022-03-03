@@ -21,7 +21,7 @@ class AdminScreen
             [$this, 'renderAdminPage']
         );
 
-        add_action('admin_notices', function() {
+        add_action('admin_notices', function () {
             $this->showAdminNotices();
         });
     }
@@ -33,7 +33,10 @@ class AdminScreen
             <h1>Meilisearch</h1>
 
             <h3><?php esc_html_e('Sync content with Meilisearch', 'meilisearch-24hr'); ?></h3>
-            <p><?php esc_html_e('This will remove all items and repopulate the index with all documents currently available on the respective content server.', 'meilisearch-24hr'); ?></p>
+            <p>
+                <?php esc_html_e('This will remove all items and repopulate the index with all
+                documents currently available on the respective content server.', 'meilisearch-24hr'); ?>
+            </p>
 
             <form method="post" action="">
                 <input type="hidden" name="24hr-sync-trigger" value="1"/>
@@ -112,7 +115,7 @@ class AdminScreen
     {
         $data = $this->getMeilisearchStats();
 
-        if (is_wp_error($data)): ?>
+        if (is_wp_error($data)) : ?>
             <p><?php echo esc_html($data->get_error_message()); ?></p>
             <?php return;
         endif;
@@ -124,9 +127,9 @@ class AdminScreen
             <h3><?php esc_html_e('Index stats', 'meilisearch-24hr'); ?></h3>
             <p><?php esc_html_e('Reload this page to refresh', 'meilisearch-24hr'); ?></p>
 
-            <?php if (empty($indexes)): ?>
+            <?php if (empty($indexes)) : ?>
                 <p><strong><?php esc_html_e('No indexes found', 'meilisearch-24hr'); ?></strong></p>
-            <?php else: ?>
+            <?php else : ?>
                 <ul>
                     <?php foreach ($indexes as $key => $index) : ?>
                         <li class="meilisearch-stats__index">
