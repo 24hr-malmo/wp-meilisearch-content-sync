@@ -16,7 +16,7 @@ class AdminScreen
         add_management_page(
             __('Meilisearch', 'meilisearch-24hr'),
             __('Meilisearch', 'meilisearch-24hr'),
-            'install_plugins',
+            'manage_options',
             'meilisearch-24hr-admin',
             [$this, 'renderAdminPage']
         );
