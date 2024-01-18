@@ -25,6 +25,7 @@ class Sync
                 'credentials' => 'include',
                 'x-site-id' => $this->getSiteId(),
             ],
+            'reject_unsafe_urls' => false,
         ]);
     }
 

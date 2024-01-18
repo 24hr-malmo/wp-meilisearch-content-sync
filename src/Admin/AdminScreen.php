@@ -102,6 +102,7 @@ class AdminScreen
     {
         $response = wp_remote_get("{$this->meilisearchHost}/stats", [
             'sslverify' => false,
+            'reject_unsafe_urls' => false,
         ]);
 
         if (is_wp_error($response)) {

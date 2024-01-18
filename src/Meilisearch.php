@@ -57,7 +57,7 @@ class Meilisearch
     protected function triggerCronSync(): void
     {
         error_log('Meilisearch::triggerCronSync() -> Triggered');
-        $response = (new Sync('live', $this->apiToken))->apiSync();
+        $response = (new Sync($this->liveContentUrl, $this->apiToken))->apiSync();
 
         if (is_wp_error($response)) {
             $errorMessage = $response->get_error_message();
