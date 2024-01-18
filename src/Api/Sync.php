@@ -17,15 +17,20 @@ class Sync
         $this->apiToken = $apiToken;
     }
 
-    public function sync(): void
+    public function apiSync()
     {
-        $response = wp_remote_get($this->contentUri . '/content-admin/reindex-content?redis=1', [
+        return wp_remote_get($this->contentUri . '/content-admin/reindex-content?redis=1', [
             'headers' => [
                 'Authorization' => "Bearer {$this->apiToken}",
                 'credentials' => 'include',
                 'x-site-id' => $this->getSiteId(),
             ],
         ]);
+    }
+
+    public function sync(): void
+    {
+        $response = $this->apiSync();
 
         if (is_wp_error($response)) {
             $notice = $response->get_error_message();

@@ -7,7 +7,7 @@
  * Plugin Name:       24hr Meilisearch Plugin
  * Plugin URI:        https://24hr.se
  * Description:       Meilisearch plugin helper
- * Version:           0.0.1
+ * Version:           0.0.3
  * Requires at least: 5.2
  * Requires PHP:      7.3
  * Author:            Richard Sweeney
