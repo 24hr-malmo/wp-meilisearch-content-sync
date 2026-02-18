@@ -74,6 +74,8 @@ class AdminScreen
 
             <hr/>
 
+            <?php do_action('meilisearch_24hr_admin_page'); ?>
+
             <?php $this->renderMeilisearchStats(); ?>
         </div>
         <?php
